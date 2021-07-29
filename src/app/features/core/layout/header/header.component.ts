@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Movies } from 'src/app/models/movies';
 import { MoviesService } from 'src/app/services/movies.service';
@@ -38,7 +39,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subs.push(
-      this.movie.getTrending().subscribe((data) => (this.trending = data))
+      this.movie.getTrending().subscribe((data) => {
+        this.trending = data;
+        this.headerBGUrl =
+          'https://image.tmdb.org/t/p/original' +
+          this.trending.results[0].backdrop_path;
+      })
     );
     this.subs.push(
       this.movie.getPopular().subscribe((data) => (this.popular = data))

@@ -9,5 +9,6 @@ import { SliderComponent } from './slider/slider.component';
 @NgModule({
   declarations: [HomeComponent, SliderComponent],
   imports: [CommonModule, HomeRoutingModule, SlickCarouselModule],
+  exports: [SlickCarouselModule],
 })
 export class HomeModule {}

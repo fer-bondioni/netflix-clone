@@ -2,22 +2,82 @@
   <div
     class="banner"
     [ngStyle]="{
-      'background-image': 'linear-gradient (rgba(0,0,0,0.8), rgba(0,0,0,0.3))'
+      'background-image':
+        'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url(' +
+        headerBGUrl +
+        ')'
     }"
   >
     <h2>{{ trending?.results[0].title }}</h2>
+    <div class="header-buttons">
+      <button class="play-button">
+        <mat-icon>arrow_right</mat-icon>
+        <span>Play</span>
+      </button>
+      <button class="more-button">
+        <mat-icon>info</mat-icon>
+        <span>More info</span>
+      </button>
+    </div>
   </div>
 
-  <div class="main">
-    <div class="header_right">
+  <!-- fin banner -->
+
+  <div
+    class="header_main"
+    id="stickyHeader"
+    [class.sticky]="sticky"
+    #stickyHeader
+  >
+    <div class="header_left">
+      <a routerLink="/">
+        <img src="assets/netflix.svg" alt="logo" />
+      </a>
       <ul>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
+        <li>
+          <a routerLink="/home" routerLinkActive="router-link-active">Home</a>
+        </li>
+        <li>
+          <a routerLink="#" routerLinkActive="router-link-active">TV shows</a>
+        </li>
+        <li>
+          <a routerLink="#" routerLinkActive="router-link-active">Movies</a>
+        </li>
+        <li>
+          <a routerLink="#" routerLinkActive="router-link-active">Popular</a>
+        </li>
+        <li>
+          <a routerLink="#" routerLinkActive="router-link-active">My list</a>
+        </li>
       </ul>
     </div>
-    <div class="header_left"></div>
+    <div class="header_right">
+      <ul>
+        <li>
+          <a routerLink="#" routerLinkActive="router-link-active">
+            <mat-icon>search</mat-icon>
+          </a>
+        </li>
+        <li><a routerLink="#">Children</a></li>
+        <li>
+          <a routerLink="#">
+            <mat-icon>card_giftcard</mat-icon>
+          </a>
+        </li>
+        <li>
+          <a routerLink="#">
+            <mat-icon>notifications</mat-icon>
+          </a>
+        </li>
+        <li>
+          <a routerLink="#">
+            <img
+              src="https://occ-0-4345-3647.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABRGTK96GBeqNw5zzYXnoa8oVjSjhuk7SuseuKTmgEKwpcCB59994UWb6wd7d1WONZOuzJwbLNpzG5Okfo4rSDLg.png?r=ee6"
+              alt="avatar"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

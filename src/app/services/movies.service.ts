@@ -19,13 +19,14 @@ const enum endpoint {
 })
 export class MoviesService {
   private URL = 'http://api.themoviedb.org/3';
-  private API_KEY = environment.api;
+  private api_key = environment.api;
+
   constructor(private http: HttpClient) {}
 
   getLatestMovie(): Observable<Movies> {
     return this.http.get<Movies>(`${this.URL}${endpoint.latest}`, {
       params: {
-        API_KEY: this.API_KEY,
+        api_key: this.api_key,
       },
     });
   }
@@ -33,7 +34,7 @@ export class MoviesService {
   getNowPlaying(): Observable<Movies> {
     return this.http.get<Movies>(`${this.URL}${endpoint.now_playing}`, {
       params: {
-        API_KEY: this.API_KEY,
+        api_key: this.api_key,
       },
     });
   }
@@ -41,7 +42,7 @@ export class MoviesService {
   getTopRated(): Observable<Movies> {
     return this.http.get<Movies>(`${this.URL}${endpoint.top_rated}`, {
       params: {
-        API_KEY: this.API_KEY,
+        api_key: this.api_key,
       },
     });
   }
@@ -49,21 +50,21 @@ export class MoviesService {
   getPopular(): Observable<Movies> {
     return this.http.get<Movies>(`${this.URL}${endpoint.popular}`, {
       params: {
-        API_KEY: this.API_KEY,
+        api_key: this.api_key,
       },
     });
   }
   getUpcoming(): Observable<Movies> {
     return this.http.get<Movies>(`${this.URL}${endpoint.upcoming}`, {
       params: {
-        API_KEY: this.API_KEY,
+        api_key: this.api_key,
       },
     });
   }
   getOriginals(): Observable<Movies> {
     return this.http.get<Movies>(`${this.URL}${endpoint.originals}`, {
       params: {
-        API_KEY: this.API_KEY,
+        api_key: this.api_key,
       },
     });
   }
@@ -71,7 +72,7 @@ export class MoviesService {
   getTrending(): Observable<Movies> {
     return this.http.get<Movies>(`${this.URL}${endpoint.trending}`, {
       params: {
-        API_KEY: this.API_KEY,
+        api_key: this.api_key,
       },
     });
   }
