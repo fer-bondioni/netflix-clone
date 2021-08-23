@@ -76,7 +76,9 @@
     top:0;
     padding: 20px;
     width: 100%;
-    z-index: 10;
+    z-index: 110;
+    transition: all 0.3s;
+    transition-timing-function:  ease-in;
 }
 .header_left{
     display: flex;
@@ -115,7 +117,7 @@
 
 .sticky{
     background-color: #0D0D0D;
-    z-index: 100;
+    z-index: 110;
 } 
 
 ul{
